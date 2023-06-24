@@ -1,13 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+interface FilteredPublicationsState { value: string[] }
+
+const initialState: FilteredPublicationsState = {value: []}
 
 const filteredPublicationsSlice = createSlice({
   name: "filteredPublications",
-  initialState: { value: [] },
+  initialState,
   reducers: {
-    addPublication: (state, action) => {
+    addPublication: (state, action: PayloadAction<string>) => {
       state.value = [...state.value, action.payload];
     },
-    removePublication: (state, action) => {
+    removePublication: (state, action: PayloadAction<string>) => {
       state.value = state.value.filter(
         (publication) => publication !== action.payload
       );

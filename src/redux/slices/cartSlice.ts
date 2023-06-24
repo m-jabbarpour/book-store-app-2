@@ -1,17 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { BookInCart } from "@/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface CartState {
+  addedBooks: BookInCart[];
+  subTotal: number;
+  discountCode: string;
+  discountPercentage: number;
+  discount: number;
+  total: number;
+}
+
+const initialState: CartState = {
+  addedBooks: [],
+  subTotal: 0,
+  discountCode: "",
+  discountPercentage: 0,
+  discount: 0,
+  total: 0,
+};
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    addedBooks: [],
-    subTotal: 0,
-    discountCode: "",
-    discountPercentage: 0,
-    discount: 0,
-    total: 0,
-  },
+  initialState,
   reducers: {
-    incrementBook: (state, action) => {
+    incrementBook: (state, action: PayloadAction<BookInCart>) => {
       const requiredBookDetails = action.payload;
       const foundBook = state.addedBooks.find(
         (addedBook) => addedBook.id === requiredBookDetails.id
@@ -19,7 +31,7 @@ const cartSlice = createSlice({
       if (foundBook) {
         state.addedBooks = state.addedBooks.map((addedBook) =>
           addedBook.id === requiredBookDetails.id
-            ? { ...addedBook, number: addedBook.number + 1 }
+            ? { ...addedBook, number: addedBook.number! + 1 }
             : addedBook
         );
       } else {
@@ -27,15 +39,15 @@ const cartSlice = createSlice({
         state.addedBooks.push(newBook);
       }
     },
-    decrementBook: (state, action) => {
+    decrementBook: (state, action: PayloadAction<BookInCart>) => {
       const requiredBookDetails = action.payload;
       const foundBook = state.addedBooks.find(
         (addedBook) => addedBook.id === requiredBookDetails.id
       );
-      if (foundBook.number > 1) {
+      if (foundBook!.number! > 1) {
         state.addedBooks = state.addedBooks.map((addedBook) =>
           addedBook.id === requiredBookDetails.id
-            ? { ...addedBook, number: addedBook.number - 1 }
+            ? { ...addedBook, number: addedBook.number! - 1 }
             : addedBook
         );
       } else {
@@ -47,7 +59,7 @@ const cartSlice = createSlice({
     updateCartValues: (state) => {
       state.subTotal = state.addedBooks.reduce(
         (accumulator, addedBook) =>
-          accumulator + addedBook.price * addedBook.number,
+          accumulator + addedBook.price * addedBook.number!,
         0
       );
       state.discount = (state.subTotal * state.discountPercentage) / 100;
@@ -84,6 +96,6 @@ export const {
   updateCartValues,
   setDiscountCode,
   checkDiscountCode,
-  emptyCart
+  emptyCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;

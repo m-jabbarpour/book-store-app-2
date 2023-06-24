@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import booksSummarySlice from "../slices/booksSummarySlice";
 
+import booksSummarySlice from "../slices/booksSummarySlice";
 import booksSlice from "../slices/booksSlice";
 import cartSlice from "../slices/cartSlice";
 import displayedBooksSlice from "../slices/displayedBooksSlice";
@@ -20,6 +20,9 @@ import bannersSlice from "../slices/bannersSlice";
 import isEditBookActive from "../slices/isEditBookActiveSlice";
 import ordersSlice from "../slices/ordersSlice";
 import isDrawerActive from "../slices/isDrawerActive";
+import { TypedUseSelectorHook } from "react-redux";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const persistConfig = {
   key: "root",
@@ -55,3 +58,10 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useTypedDispatch: () => AppDispatch = useDispatch;
