@@ -1,13 +1,17 @@
-import SearchBarSm from "./SearchBarSm";
-import MobileDrawer from "../custom/MobileDrawer";
-import Image from "next/image";
 import React from "react";
-import logo from "../../../public/logos/logo.svg";
-import { UserCircleIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
-import CartIcon from "../custom/CartIcon";
 
-function HeaderSm() {
+import Image from "next/image";
+import Link from "next/link";
+
+import { UserCircleIcon } from "@heroicons/react/20/solid";
+
+import CartIcon from "../custom/CartIcon";
+import MobileDrawer from "../custom/MobileDrawer";
+import SearchBarSm from "./SearchBarSm";
+
+import logo from "../../../public/logos/logo.svg";
+
+const HeaderSm: React.FC = () => {
   return (
     <header className="md:hidden h-[5rem] shadow-lg">
       <div className="container py-4 rounded-lg flex justify-between">
@@ -16,7 +20,7 @@ function HeaderSm() {
           <SearchBarSm />
         </div>
         <Link href="/">
-          <Image layout="fixed" src={logo} width="48" height="48" />
+          <Image src={logo} width={48} height={48} alt="فروشگاه کتاب"/>
         </Link>
         <div className="flex gap-x-4 items-center">
           <span>مدیریت</span>
@@ -26,6 +30,6 @@ function HeaderSm() {
       </div>
     </header>
   );
-}
+};
 
 export default HeaderSm;

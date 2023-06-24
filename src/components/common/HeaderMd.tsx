@@ -14,10 +14,10 @@ function HeaderMd() {
         <div className="flex gap-x-4 items-center">
           <Link href="/">
             <Image
-              layout="fixed"
               src={logo}
-              width="48"
-              height="48"
+              width={48}
+              height={48}
+              alt="فروشگاه کتاب"
               className=" cursor-pointer"
             />
           </Link>

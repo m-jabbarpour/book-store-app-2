@@ -1,33 +1,39 @@
-import React, { useEffect, useState } from "react";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { ChevronLeftIcon } from "@heroicons/react/20/solid";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState, ChangeEvent } from "react";
+
+import { useRouter } from "next/router";
+
+import { useTypedDispatch, useTypedSelector } from "@/redux/store";
 import { setSearchedWord } from "../../redux/slices/searchSlice";
 import { fetchBooks } from "../../redux/slices/booksSlice";
 import { setFoundBooks } from "../../redux/slices/searchSlice";
-import { useRouter } from "next/router";
+
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { ChevronLeftIcon } from "@heroicons/react/20/solid";
+
 
 function SearchBarSm() {
-  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
-  const searchedWord = useSelector((store) => store.search.searchedWord);
-  const books = useSelector((store) => store.books.value);
-  const dispatch = useDispatch();
+  const searchedWord = useTypedSelector((state) => state.search.searchedWord);
+  const books = useTypedSelector((state) => state.books.value);
+  const dispatch = useTypedDispatch();
+
   const router = useRouter();
+  
   const minimumCharacters = 3;
 
   useEffect(() => {
     if (router.pathname !== "/search-results") dispatch(setSearchedWord(""));
-  }, []);
+  }, [router.pathname, dispatch]);
 
   useEffect(() => {
-    if (searchedWord.length === minimumCharacters) {
+    if (searchedWord.length >= minimumCharacters) {
       dispatch(fetchBooks());
     }
-  }, [searchedWord]);
+  }, [searchedWord, dispatch]);
 
-  const handleChange = (e) => {
-    dispatch(setSearchedWord(e.target.value));
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchedWord(event.target.value));
   };
 
   const handleSearch = () => {
