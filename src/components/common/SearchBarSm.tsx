@@ -10,8 +10,7 @@ import { setFoundBooks } from "../../redux/slices/searchSlice";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
-
-function SearchBarSm() {
+const SearchBarSm: React.FC = () => {
   const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
   const searchedWord = useTypedSelector((state) => state.search.searchedWord);
@@ -19,7 +18,7 @@ function SearchBarSm() {
   const dispatch = useTypedDispatch();
 
   const router = useRouter();
-  
+
   const minimumCharacters = 3;
 
   useEffect(() => {
@@ -72,6 +71,6 @@ function SearchBarSm() {
       )}
     </>
   );
-}
+};
 
 export default SearchBarSm;
