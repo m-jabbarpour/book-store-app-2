@@ -1,9 +1,9 @@
-import { RequestMode } from "@/types";
+import { Banner, RequestMode } from "@/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 interface BannersState {
-  value: [];
+  value: Banner[];
   status: RequestMode;
 }
 

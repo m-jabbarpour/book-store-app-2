@@ -1,16 +1,7 @@
-import { BookInCart } from "@/types";
+import { BookInCart, Cart } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface CartState {
-  addedBooks: BookInCart[];
-  subTotal: number;
-  discountCode: string;
-  discountPercentage: number;
-  discount: number;
-  total: number;
-}
-
-const initialState: CartState = {
+const initialState: Cart = {
   addedBooks: [],
   subTotal: 0,
   discountCode: "",

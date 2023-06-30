@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Book } from "@/types";
+import { BookSummary } from "@/types";
 
 interface SelectedBookState {
-  value: Book | null;
+  value: BookSummary | null;
 }
 
 const initialState: SelectedBookState = { value: null };
@@ -11,7 +11,7 @@ const selectedBookSlice = createSlice({
   name: "selectedBook",
   initialState,
   reducers: {
-    setSelectedBook: (state, action: PayloadAction<Book>) => {
+    setSelectedBook: (state, action: PayloadAction<BookSummary>) => {
       state.value = action.payload;
     },
   },

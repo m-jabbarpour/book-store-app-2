@@ -28,8 +28,8 @@ export const booksSummarySlice = createSlice({
     addBook: (state, action: PayloadAction<BookSummary>) => {
       state.value.push(action.payload);
     },
-    deleteBook: (state, action: PayloadAction<BookSummary>) => {
-      state.value = state.value.filter((book) => book.id !== action.payload.id);
+    deleteBook: (state, action: PayloadAction<string>) => {
+      state.value = state.value.filter((book) => book.id !== action.payload);
     },
     editBook: (state, action: PayloadAction<BookSummary>) => {
       const editedBook = action.payload;
