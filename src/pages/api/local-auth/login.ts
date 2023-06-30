@@ -1,6 +1,8 @@
+import { NextApiRequest, NextApiResponse } from "next";
+
 import { users } from "../../../database/users";
 
-export default function handler(req, res) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const { email, password } = req.body;
     const foundUser = users.find((user) => user.email === email);

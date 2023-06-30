@@ -1,6 +1,8 @@
+import { NextApiRequest, NextApiResponse } from "next";
+
 import booksDataBase from "../../../database/db";
 
-export default function handler(req, res) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { bookId } = req.query;
   const book = booksDataBase.find((book) => book.id === bookId);
   if (!book) {
