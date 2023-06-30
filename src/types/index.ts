@@ -33,6 +33,18 @@ export interface BookSummary {
   quantity: number;
 }
 
+export interface Banner {
+  id: string;
+  src: string;
+  category: string;
+}
+
+export interface Comment {
+  userName: string;
+  rate: number;
+  text: string;
+}
+
 export interface Order {
   id: string;
   firstName: string;
@@ -42,7 +54,16 @@ export interface Order {
   totalPrice: number;
   orderDate: string;
   deliveryDate: string;
-  books: { title: string; price: number; quantit: number }[];
+  books: { title: string; price: number; quantity: number }[];
+}
+
+export interface Cart {
+  addedBooks: BookInCart[];
+  subTotal: number;
+  discountCode: string;
+  discountPercentage: number;
+  discount: number;
+  total: number;
 }
 
 export type RequestMode = "idle" | "pending" | "success" | "rejected";
