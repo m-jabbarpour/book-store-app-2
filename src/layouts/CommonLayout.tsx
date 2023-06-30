@@ -2,7 +2,7 @@ import HeaderSm from "../components/common/HeaderSm";
 import HeaderMd from "../components/common/HeaderMd";
 import Footer from "../components/common/Footer";
 
-function CommonLayout({ children }) {
+const CommonLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <>
       <HeaderSm />
@@ -11,6 +11,6 @@ function CommonLayout({ children }) {
       <Footer />
     </>
   );
-}
+};
 
 export default CommonLayout;
