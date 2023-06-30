@@ -1,4 +1,4 @@
-import React, { useEffect, ChangeEvent } from "react";
+import { useEffect, ChangeEvent } from "react";
 
 import { useRouter } from "next/router";
 

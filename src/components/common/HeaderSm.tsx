@@ -1,5 +1,3 @@
-import React from "react";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +18,7 @@ const HeaderSm: React.FC = () => {
           <SearchBarSm />
         </div>
         <Link href="/">
-          <Image src={logo} width={48} height={48} alt="فروشگاه کتاب"/>
+          <Image src={logo} width={48} height={48} alt="فروشگاه کتاب" />
         </Link>
         <div className="flex gap-x-4 items-center">
           <span>مدیریت</span>
