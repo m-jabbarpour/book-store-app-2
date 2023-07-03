@@ -3,7 +3,7 @@ import Link from "next/link";
 import SignupForm from "../components/custom/SignupForm";
 import AuthLayout from "../layouts/AuthLayout";
 
-function Signup() {
+const Signup: React.FC = () => {
   return (
     <AuthLayout>
       <SignupForm />
@@ -15,6 +15,6 @@ function Signup() {
       </div>
     </AuthLayout>
   );
-}
+};
 
 export default Signup;

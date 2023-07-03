@@ -1,8 +1,7 @@
-import React from "react";
 import PaymentSuccess from "../../components/custom/PaymentSuccess";
 
-function Success() {
+const Success: React.FC = () => {
   return <PaymentSuccess />;
-}
+};
 
 export default Success;

@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 
-function Payment() {
+const Payment: React.FC = () => {
   const router = useRouter();
+
   return (
     <div className="h-[100vh] w-100 flex justify-center items-center">
       <div className="flex gap-3">
@@ -20,6 +21,6 @@ function Payment() {
       </div>
     </div>
   );
-}
+};
 
 export default Payment;

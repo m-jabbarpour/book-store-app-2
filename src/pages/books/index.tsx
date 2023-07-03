@@ -1,35 +1,40 @@
-import Head from "next/head";
 import { useEffect } from "react";
 
-import BooksContainer from "../../components/custom/BooksContainer";
-import SideBar from "../../components/custom/SideBar";
-import Sort from "../../components/custom/Sort";
-import CommonLayout from "../../layouts/CommonLayout";
+import Head from "next/head";
 
-import { useSelector, useDispatch } from "react-redux";
-import { fetchBooks } from "../../redux/slices/booksSlice";
+import BooksContainer from "@/components/custom/BooksContainer";
+import SideBar from "@/components/custom/SideBar";
+import Sort from "@/components/custom/Sort";
+import CommonLayout from "@/layouts/CommonLayout";
+import NoBookFound from "@/components/custom/NoBookFound";
+
+import { useTypedDispatch, useTypedSelector } from "@/redux/store";
+import { fetchBooks } from "@/redux/slices/booksSlice";
 import {
   setDisplayedBooks,
   sortDisplayedBooks,
-} from "../../redux/slices/displayedBooksSlice";
-import NoBookFound from "../../components/custom/NoBookFound";
+} from "@/redux/slices/displayedBooksSlice";
 
-function Books() {
-  const dispatch = useDispatch();
-  const books = useSelector((store) => store.books);
-  const filteredAuthors = useSelector((store) => store.filteredAuthors.value);
-  const filteredPublications = useSelector(
+const Books: React.FC = () => {
+  const dispatch = useTypedDispatch();
+  const books = useTypedSelector((store) => store.books);
+  const filteredAuthors = useTypedSelector(
+    (store) => store.filteredAuthors.value
+  );
+  const filteredPublications = useTypedSelector(
     (store) => store.filteredPublications.value
   );
-  const filteredSubCategory = useSelector(
+  const filteredSubCategory = useTypedSelector(
     (store) => store.filteredSubCategory.value
   );
-  const sortation = useSelector((store) => store.sortation.value);
-  const displayedBooks = useSelector((store) => store.displayedBooks.value);
+  const sortation = useTypedSelector((store) => store.sortation.value);
+  const displayedBooks = useTypedSelector(
+    (store) => store.displayedBooks.value
+  );
 
   useEffect(() => {
     dispatch(fetchBooks());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (books.status === "success") {
@@ -47,11 +52,12 @@ function Books() {
     filteredAuthors,
     filteredPublications,
     filteredSubCategory,
+    dispatch,
   ]);
 
   useEffect(() => {
     dispatch(sortDisplayedBooks(sortation));
-  }, [sortation]);
+  }, [sortation, dispatch]);
 
   return (
     <>
@@ -73,6 +79,6 @@ function Books() {
       </CommonLayout>
     </>
   );
-}
+};
 
 export default Books;

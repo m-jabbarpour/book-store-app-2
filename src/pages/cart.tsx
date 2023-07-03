@@ -1,15 +1,16 @@
 import Head from "next/head";
-import React from "react";
-import { useSelector } from "react-redux";
-import CartTableMd from "../components/custom/CartTableMd";
-import CartTableSm from "../components/custom/CartTableSm";
-import OrderDetails from "../components/custom/OrderDetails";
-import Title from "../components/custom/Title";
 
-import CommonLayout from "../layouts/CommonLayout";
+import CartTableMd from "@/components/custom/CartTableMd";
+import CartTableSm from "@/components/custom/CartTableSm";
+import OrderDetails from "@/components/custom/OrderDetails";
+import Title from "@/components/custom/Title";
 
-function Cart() {
-  const cart = useSelector((store) => store.cart);
+import CommonLayout from "@/layouts/CommonLayout";
+
+import { useTypedSelector } from "@/redux/store";
+
+const Cart: React.FC = () => {
+  const cart = useTypedSelector((store) => store.cart);
   return (
     <>
       <Head>
@@ -31,6 +32,6 @@ function Cart() {
       </CommonLayout>
     </>
   );
-}
+};
 
 export default Cart;

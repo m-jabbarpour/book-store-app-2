@@ -1,8 +1,9 @@
 import Link from "next/link";
+
 import LoginForm from "../components/custom/LoginForm";
 import AuthLayout from "../layouts/AuthLayout";
 
-function Login() {
+const Login: React.FC = () => {
   return (
     <AuthLayout>
       <LoginForm />
@@ -14,6 +15,6 @@ function Login() {
       </div>
     </AuthLayout>
   );
-}
+};
 
 export default Login;

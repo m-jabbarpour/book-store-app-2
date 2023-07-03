@@ -1,10 +1,11 @@
-import { useSelector } from "react-redux";
 import BooksContainer from "../components/custom/BooksContainer";
 import NoBookFound from "../components/custom/NoBookFound";
 import CommonLayout from "../layouts/CommonLayout";
 
-function SearchResults() {
-  const foundBooks = useSelector((store) => store.search.foundBooks);
+import { useTypedSelector } from "@/redux/store";
+
+const SearchResults: React.FC = () => {
+  const foundBooks = useTypedSelector((store) => store.search.foundBooks);
   return (
     <CommonLayout>
       <div className="container mx-auto px-12">
@@ -16,6 +17,6 @@ function SearchResults() {
       </div>
     </CommonLayout>
   );
-}
+};
 
 export default SearchResults;
