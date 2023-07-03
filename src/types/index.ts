@@ -13,6 +13,7 @@ export interface Book {
   quantity: number;
   introduction: string;
   sample: string;
+  comments?: Comment[];
 }
 
 export interface BookInCart {
