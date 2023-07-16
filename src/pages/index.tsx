@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import Head from "next/head";
 
 import CommonLayout from "@/layouts/CommonLayout";
@@ -7,20 +5,27 @@ import SwiperLg from "@/components/custom/SwiperLg";
 import BannerSwiper from "@/components/custom/BannerSwiper";
 import BookSubCategory from "@/components/custom/BookSubCategory";
 
-import { useTypedDispatch, useTypedSelector } from "@/redux/store";
-import { fetchBooks } from "@/redux/slices/booksSlice";
-import { fetchBanners } from "@/redux/slices/bannersSlice";
+import booksDataBase from "@/database/db";
+import banners from "@/database/banners";
 
-const Home: React.FC = () => {
-  const books = useTypedSelector((store) => store.books.value);
-  const banners = useTypedSelector((store) => store.banners.value);
-  const dispatch = useTypedDispatch();
+import { Banner, Book } from "@/types";
 
-  useEffect(() => {
-    dispatch(fetchBooks());
-    dispatch(fetchBanners());
-  }, []);
+interface Props {
+  allBooks: Book[];
+  allBanners: Banner[];
+}
 
+export const getStaticProps = () => {
+  const allBooks = booksDataBase;
+  const allBanners = banners;
+
+  return {
+    props: { allBooks, allBanners },
+    revalidate: 60 * 60,
+  };
+};
+
+const Home: React.FC<Props> = ({ allBooks, allBanners }) => {
   return (
     <>
       <Head>
@@ -31,13 +36,13 @@ const Home: React.FC = () => {
 
       <CommonLayout>
         <SwiperLg />
-        <BookSubCategory subCategory="توسعه فردی" books={books} />
-        <BannerSwiper category="blog" banners={banners} />
-        <BookSubCategory subCategory="خانواده و ازدواج" books={books} />
-        <BannerSwiper category="quote" banners={banners} />
-        <BookSubCategory subCategory="داستان خارجی" books={books} />
-        <BannerSwiper category="instagram" banners={banners} />
-        <BookSubCategory subCategory="داستان ایرانی" books={books} />
+        <BookSubCategory subCategory="توسعه فردی" books={allBooks} />
+        <BannerSwiper category="blog" banners={allBanners} />
+        <BookSubCategory subCategory="خانواده و ازدواج" books={allBooks} />
+        <BannerSwiper category="quote" banners={allBanners} />
+        <BookSubCategory subCategory="داستان خارجی" books={allBooks} />
+        <BannerSwiper category="instagram" banners={allBanners} />
+        <BookSubCategory subCategory="داستان ایرانی" books={allBooks} />
       </CommonLayout>
     </>
   );
