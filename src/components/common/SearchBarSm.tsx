@@ -1,44 +1,22 @@
-import { useEffect, useState, ChangeEvent } from "react";
+import { useRef, useState } from "react";
 
 import { useRouter } from "next/router";
 
-import { useTypedDispatch, useTypedSelector } from "@/redux/store";
-import { setSearchedWord } from "../../redux/slices/searchSlice";
-import { fetchBooks } from "../../redux/slices/booksSlice";
-import { setFoundBooks } from "../../redux/slices/searchSlice";
 
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { ChevronLeftIcon } from "@heroicons/react/20/solid";
+import { ChevronLeftIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 
 const SearchBarSm: React.FC = () => {
   const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
-  const searchedWord = useTypedSelector((state) => state.search.searchedWord);
-  const books = useTypedSelector((state) => state.books.value);
-  const dispatch = useTypedDispatch();
-
   const router = useRouter();
 
-  const minimumCharacters = 3;
-
-  useEffect(() => {
-    if (router.pathname !== "/search-results") dispatch(setSearchedWord(""));
-  }, [router.pathname, dispatch]);
-
-  useEffect(() => {
-    if (searchedWord.length >= minimumCharacters) {
-      dispatch(fetchBooks());
-    }
-  }, [searchedWord, dispatch]);
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchedWord(event.target.value));
-  };
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const handleSearch = () => {
-    if (searchedWord.length >= minimumCharacters) {
-      dispatch(setFoundBooks(books));
-      if (router.pathname !== "/search-results") router.push("/search-results");
+    const term = searchInputRef?.current?.value;
+
+    if (term) {
+      router.push("/search-results?term=" + term);
     }
   };
 
@@ -51,10 +29,9 @@ const SearchBarSm: React.FC = () => {
             onClick={handleSearch}
           />
           <input
+            ref={searchInputRef}
             className="w-4/5 bg-transparent focus:outline-0"
             type="text"
-            value={searchedWord}
-            onChange={handleChange}
           />
           <ChevronLeftIcon
             className="w-8 cursor-pointer"
