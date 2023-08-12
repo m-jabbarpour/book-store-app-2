@@ -48,14 +48,14 @@ const SideBar: React.FC = () => {
       <Filter
         title="نویسنده"
         options={authors}
-        addFilter={dispatch(addAuthor)}
-        removeFilter={dispatch(removeAuthor)}
+        addFilter={(value) => dispatch(addAuthor(value))}
+        removeFilter={(value) => dispatch(removeAuthor(value))}
       />
       <Filter
         title="انتشارات"
         options={publications}
-        addFilter={dispatch(addPublication)}
-        removeFilter={dispatch(removePublication)}
+        addFilter={(value) => dispatch(addPublication(value))}
+        removeFilter={(value) => dispatch(removePublication(value))}
       />
     </aside>
   );
