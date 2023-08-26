@@ -11,7 +11,7 @@ import logo from "../../../public/logos/logo.svg";
 
 const HeaderSm: React.FC = () => {
   return (
-    <header className="md:hidden h-[5rem] shadow-lg">
+    <header className="md:hidden h-[5rem] shadow-md shadow-slate-500 bg-white dark:bg-slate-900 dark:text-slate-300">
       <div className="container py-4 rounded-lg flex justify-between">
         <div className="flex gap-x-4 items-center">
           <MobileDrawer />

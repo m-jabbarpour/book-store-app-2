@@ -18,7 +18,7 @@ const SearchBarLg: React.FC = () => {
   };
 
   return (
-    <div className="w-[15rem] rounded p-2 flex gap-4 bg-gray-200">
+    <div className="w-[15rem] rounded p-2 flex gap-4 bg-gray-200 dark:bg-slate-600">
       <input
         ref={searchInputRef}
         className="w-48 bg-transparent focus:outline-0"
