@@ -66,7 +66,7 @@ const Pagination: React.FC<Props> = ({
             className={classnames("pagination-item", {
               selected: pageNumber === currentPage,
             })}
-            onClick={() => onPageChange(pageNumber)}
+            onClick={() => onPageChange(Number(pageNumber))}
           >
             {pageNumber}
           </li>
