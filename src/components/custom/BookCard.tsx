@@ -15,10 +15,10 @@ const BookCard: React.FC<Props> = ({ book }) => {
           <Image src={book.image} alt={book.title} width={200} height={296} />
         </div>
 
-        <h5 className="text-xs lg:text-base text-center truncate group-hover:text-primary group-hover:font-bold transition-all duration-300">
+        <h5 className="text-xs lg:text-base text-center truncate group-hover:text-primary dark:text-slate-200 group-hover:font-bold transition-all duration-300">
           {book.title}
         </h5>
-        <h6 className="text-xs lg:text-base text-center text-gray-500">
+        <h6 className="text-xs lg:text-base text-center text-gray-500 dark:text-slate-400">
           {book.authors.join("، ")}
         </h6>
       </div>

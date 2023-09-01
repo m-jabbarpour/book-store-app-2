@@ -23,7 +23,7 @@ const Filter: React.FC<Props> = ({
   };
 
   return (
-    <div className="px-3 pt-3 pb-2 bg-white rounded-lg">
+    <div className="px-3 pt-3 pb-2 bg-white dark:bg-slate-950 rounded-lg">
       <div className="flex gap-2 pb-2">
         <Bars3Icon className="w-6" />
         <h5>{title}</h5>

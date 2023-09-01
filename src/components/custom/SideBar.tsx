@@ -43,19 +43,19 @@ const SideBar: React.FC = () => {
   }, [books.status]);
 
   return (
-    <aside className="flex flex-col gap-4 md:basis-52 shrink-0 md:pb-6 mt-8 md:pl-8   bg-neutral-100">
+    <aside className="flex flex-col gap-4 md:basis-52 shrink-0 md:pb-6 mt-8 md:pl-8 bg-neutral-100 dark:bg-slate-800">
       <Menu />
       <Filter
         title="نویسنده"
         options={authors}
-        addFilter={dispatch(addAuthor)}
-        removeFilter={dispatch(removeAuthor)}
+        addFilter={(value) => dispatch(addAuthor(value))}
+        removeFilter={(value) => dispatch(removeAuthor(value))}
       />
       <Filter
         title="انتشارات"
         options={publications}
-        addFilter={dispatch(addPublication)}
-        removeFilter={dispatch(removePublication)}
+        addFilter={(value) => dispatch(addPublication(value))}
+        removeFilter={(value) => dispatch(removePublication(value))}
       />
     </aside>
   );

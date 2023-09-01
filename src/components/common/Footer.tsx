@@ -11,7 +11,7 @@ import samandehi from "../../../public/logos/samandehi.png";
 import enamad from "../../../public/logos/enamad.webp";
 
 const Footer: React.FC = () => (
-  <footer className="bg-neutral-200 ">
+  <footer className="bg-neutral-200 dark:bg-slate-700 dark:text-slate-300">
     <div className="container mx-auto px-12 py-4">
       <div className="xl:flex pb-4 border-b-[1px] border-gray-100">
         <div className="w-full xl:w-1/3 flex flex-col justify-around items-center gap-2 text-xs px-8 mx-auto">
@@ -79,43 +79,43 @@ const Footer: React.FC = () => (
         <div className="flex gap-2">
           <Image
             src={facebook}
-            width={64}
-            height={64}
+            width={32}
+            height={32}
             alt="فیس‌بوک"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
             src={twitter}
-            width={64}
-            height={64}
+            width={32}
+            height={32}
             alt="توئیتر"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
             src={youtube}
-            width={64}
-            height={64}
+            width={32}
+            height={32}
             alt="یوتیوب"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
             src={telegram}
-            width={64}
-            height={64}
+            width={32}
+            height={32}
             alt="تلگرام"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
             src={instagram}
-            width={64}
-            height={64}
+            width={32}
+            height={32}
             alt="اینستاگرام"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
             src={linkedin}
-            width={64}
-            height={64}
+            width={32}
+            height={32}
             alt="لینکدین"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />

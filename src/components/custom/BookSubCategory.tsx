@@ -34,11 +34,13 @@ const BookSubCategory: React.FC<Props> = ({ subCategory, books }) => {
   };
 
   return (
-    <div className="container pt-4 pb-6 sm:pt-8 sm:pb-12 bg-neutral-100">
+    <div className="container pt-4 pb-4 sm:pt-8 sm:pb-12 bg-neutral-100 dark:bg-slate-900">
       <div className="flex justify-between mb-6">
-        <h2 className="text-sm sm:text-lg font-bold">{subCategory}</h2>
+        <h2 className="text-sm sm:text-lg font-bold dark:text-slate-200">
+          {subCategory}
+        </h2>
         <span
-          className="text-xs sm:text-base text-gray-500 cursor-pointer"
+          className="text-xs sm:text-base hover:text-primary text-gray-500 dark:text-slate-300 dark:hover:text-primary cursor-pointer"
           onClick={goToSelectedSubCategory}
         >
           مشاهده همه

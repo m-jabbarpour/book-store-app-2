@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { AppProps } from "next/app";
 
+import { ThemeProvider } from "next-themes";
+
 import { Provider } from "react-redux";
 import { persistor, store } from "@/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
@@ -18,7 +20,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
           <Head>
             <link rel="icon" href="/logos/logo.svg" />
           </Head>
-          <Component {...pageProps} />
+          <ThemeProvider attribute="class">
+            <Component {...pageProps} />
+          </ThemeProvider>
         </>
       </PersistGate>
     </Provider>

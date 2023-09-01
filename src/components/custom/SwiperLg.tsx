@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 
 const SwiperLg: React.FC = () => {
   return (
-    <div className="container mt-8 bg-neutral-100">
+    <div className="container py-8 bg-neutral-100 dark:bg-slate-950">
       <Swiper
         centeredSlides={true}
         loop={true}

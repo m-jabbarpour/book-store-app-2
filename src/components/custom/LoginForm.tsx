@@ -19,7 +19,7 @@ const LoginForm: React.FC = () => {
     password: yup.string().required("رمز عبور را وارد کنید!"),
   });
 
-  const handleLogin = async (values) => {
+  const handleLogin = async (values: { email: string; password: string }) => {
     const user = { email: values.email, password: values.password };
     axios
       .post("/api/local-auth/login", user)

@@ -10,15 +10,17 @@ interface Props {
 
 const BookDetails: React.FC<Props> = ({ book }) => {
   return (
-    <div className="container my-8">
+    <div className="container dark:bg-slate-950 py-8">
       <div className="flex flex-col sm:flex-row">
         <div className="flex pb-4">
           <div className="relative w-[120px] h-[177.6px] sm:w-[150px] sm:h-[222px] lg:w-[180px] lg:h-[270px] xl:w-[200px] xl:h-[296px] rounded sm:rounded-lg overflow-hidden shadow-lg">
             <Image src={book.image} width={200} height={281} alt={book.title} />
           </div>
           <div className="flex flex-col justify-between px-4 py-1 mr-4">
-            <h1 className="sm:text-xl font-bold">{book.title}</h1>
-            <div className="text-xs sm:text-sm text-gray-500 flex flex-col gap-2">
+            <h1 className="sm:text-xl font-bold dark:text-slate-100">
+              {book.title}
+            </h1>
+            <div className="text-xs sm:text-sm text-gray-500 dark:text-slate-300 flex flex-col gap-2">
               <div>
                 <span>نویسنده: </span>
                 <span>{book.authors.join("، ")}</span>

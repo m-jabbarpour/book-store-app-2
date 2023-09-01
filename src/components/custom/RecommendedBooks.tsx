@@ -46,9 +46,9 @@ const RecommendedBooks: React.FC<Props> = ({ currentBook, property }) => {
   if (otherBooksOfProperty.length === 0) return <></>;
 
   return (
-    <div className="container pt-4 pb-6 sm:pt-8 sm:pb-12 bg-neutral-100">
+    <div className="container pt-4 pb-6 sm:pt-8 sm:pb-12 bg-neutral-100 dark:bg-slate-900">
       <div className="flex justify-between mb-6">
-        <h2 className="text-sm sm:text-lg font-bold">{`سایر کتاب‌های ${currentBook[property]}`}</h2>
+        <h2 className="text-sm sm:text-lg font-bold dark:text-slate-200">{`سایر کتاب‌های ${currentBook[property]}`}</h2>
       </div>
       <BookSwiper books={otherBooksOfProperty} />
     </div>

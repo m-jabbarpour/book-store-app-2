@@ -25,7 +25,7 @@ const BannerSwiper: React.FC<Props> = ({ category, banners }) => {
   }, [banners, category]);
 
   return (
-    <section className="container pt-4 pb-6 sm:pt-8 sm:pb-12 bg-neutral-100">
+    <section className="container pt-4 pb-6 sm:pt-8 sm:pb-12 bg-neutral-100 dark:bg-slate-950">
       <Swiper
         slidesPerView={"auto"}
         spaceBetween={30}
