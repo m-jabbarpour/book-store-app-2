@@ -9,7 +9,7 @@ const CartIcon: React.FC = () => {
   return (
     <Link href="/cart">
       <div className="cursor-pointer">
-        <ShoppingBagIcon className="w-6 relative" />
+        <ShoppingBagIcon className="w-6 relative hover:text-primary" />
         {addedBooks.length > 0 && (
           <div className="absolute top-6 w-4 h-4 flex justify-center items-center rounded-full bg-primary text-white font-bold text-xs z-10">
             <span>{addedBooks.length}</span>

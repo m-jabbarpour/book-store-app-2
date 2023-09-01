@@ -25,7 +25,7 @@ const Menu: React.FC = () => {
   };
 
   return (
-    <div className="p-3 bg-white rounded-lg">
+    <div className="p-3 bg-white dark:bg-slate-950 rounded-lg">
       <div className="flex gap-2 pb-3">
         <Bars3Icon className="w-6" />
         <h5>دسته‌بندی</h5>

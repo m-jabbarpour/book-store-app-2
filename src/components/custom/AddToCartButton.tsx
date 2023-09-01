@@ -59,7 +59,7 @@ const AddToCartButton: React.FC<Props> = ({ currentBook }) => {
           <div className="p-2 cursor-pointer bg-primary" onClick={handlePlus}>
             <PlusIcon className="w-6 text-white " />
           </div>
-          <div className="w-[44px] text-center font-bold bg-neutral-200 h-full p-2">
+          <div className="w-[44px] text-center font-bold bg-neutral-200 dark:bg-slate-700 h-full p-2">
             <span>{number}</span>
           </div>
           <div className="p-2 cursor-pointer bg-primary" onClick={handleMinus}>

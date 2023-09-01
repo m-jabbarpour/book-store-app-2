@@ -21,9 +21,9 @@ const Comments: React.FC<Props> = ({ bookTitle, comments }) => {
   }, [currentPage, comments]);
 
   return (
-    <div className="bg-neutral-50">
+    <div className="bg-neutral-50 dark:bg-slate-950">
       <div className=" container py-8">
-        <h2 className="text-sm sm:text-xl font-bold mb-4">
+        <h2 className="text-sm sm:text-xl dark:text-slate-200 font-bold mb-4">
           {`نظرات کاربران درباره کتاب ${bookTitle}`}
         </h2>
         {currentComments.map((comment, index) => (
@@ -31,9 +31,9 @@ const Comments: React.FC<Props> = ({ bookTitle, comments }) => {
             key={index}
             className="py-3 border-b border-neutral-400 border-dotted"
           >
-            <h6 className="text-sm">{comment.userName}</h6>
+            <h6 className="text-sm dark:text-slate-200">{comment.userName}</h6>
             <span>{"⭐".repeat(comment.rate)}</span>
-            <p className="text-xs text-justify text-gray-600 px-10">
+            <p className="text-xs text-justify text-gray-600 dark:text-slate-300 px-10">
               {comment.text}
             </p>
           </div>

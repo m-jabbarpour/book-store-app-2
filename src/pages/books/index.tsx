@@ -65,7 +65,7 @@ const Books: React.FC = () => {
         <title>طاقچه | کتاب‌ها</title>
       </Head>
       <CommonLayout>
-        <div className="container flex flex-col md:flex-row">
+        <div className="container flex flex-col md:flex-row dark:bg-slate-800">
           <SideBar />
           <div className="grow">
             <Sort />

@@ -24,7 +24,7 @@ const DiscountCodeInput: React.FC = () => {
 
   return (
     <form
-      className="flex items-center w-full  rounded overflow-hidden bg-neutral-100 shadow"
+      className="flex items-center w-full rounded overflow-hidden bg-neutral-100 dark:bg-slate-700 shadow"
       onSubmit={handleSubmit}
     >
       <input

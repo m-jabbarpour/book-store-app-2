@@ -17,12 +17,14 @@ const OrderDetails: React.FC<Props> = ({ cart }) => {
   };
 
   return (
-    <div className="w-full md:w-2/5 md:mr-5 mb-4 p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-center border-b-2 border-neutral-500 mt-5 mb-10 pt-2">
-        <span className="bg-white font-bold leading-3 pb-1 px-2">
+    <div className="w-full md:w-2/5 md:mr-5 mb-4 p-4 bg-white dark:bg-slate-950 rounded-lg shadow-md">
+      <div className="relative mt-4 mb-8">
+        <hr className="border-none h-[2px] bg-gray-400" />
+        <div className="absolute top-[-14px] left-1/2 translate-x-[-50%] px-3 font-bold bg-white dark:bg-slate-950">
           جزئیات سفارش
-        </span>
-      </h2>
+        </div>
+      </div>
+
       <DiscountCodeInput />
       <div className="flex justify-between mt-4">
         <span>مبلغ کل بدون تخفیف</span>

@@ -43,7 +43,7 @@ const SideBar: React.FC = () => {
   }, [books.status]);
 
   return (
-    <aside className="flex flex-col gap-4 md:basis-52 shrink-0 md:pb-6 mt-8 md:pl-8   bg-neutral-100">
+    <aside className="flex flex-col gap-4 md:basis-52 shrink-0 md:pb-6 mt-8 md:pl-8 bg-neutral-100 dark:bg-slate-800">
       <Menu />
       <Filter
         title="نویسنده"
