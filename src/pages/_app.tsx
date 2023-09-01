@@ -1,6 +1,28 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import Head from "next/head";
+import { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { Provider } from "react-redux";
+import { persistor, store } from "@/redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+
+import "@/styles/globals.css";
+import "swiper/css/bundle";
+import "@/styles/swiper.css";
+import "@/styles/pagination.scss";
+
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <>
+          <Head>
+            <link rel="icon" href="/logos/logo.svg" />
+          </Head>
+          <Component {...pageProps} />
+        </>
+      </PersistGate>
+    </Provider>
+  );
 }
+
+export default MyApp;
