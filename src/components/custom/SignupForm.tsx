@@ -54,7 +54,7 @@ const SignupForm: React.FC = () => {
     >
       {(handler) => (
         <form
-          className="flex flex-col w-[320px] mx-auto bg-neutral-200 p-5 rounded-lg"
+          className="flex flex-col w-[320px] mx-auto bg-neutral-200 dark:bg-slate-900 p-5 rounded-lg"
           onSubmit={handler.handleSubmit}
         >
           <label htmlFor="firstName" className="mb-1">

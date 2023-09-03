@@ -36,7 +36,7 @@ const ChangeNumberButtons: React.FC<Props> = ({ currentBook }) => {
         <div className="p-2 cursor-pointer bg-primary" onClick={handlePlus}>
           <PlusIcon className="w-4 text-white " />
         </div>
-        <div className="w-[32px] text-center text-xs bg-white p-2">
+        <div className="w-[32px] text-center text-xs bg-white p-2 dark:bg-slate-900">
           <span>{number}</span>
         </div>
         <div className="p-2 cursor-pointer bg-primary" onClick={handleMinus}>

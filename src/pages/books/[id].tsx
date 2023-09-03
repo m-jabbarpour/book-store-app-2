@@ -35,6 +35,7 @@ interface Props {
 const SingleBook: React.FC<Props> = ({ book, comments }) => {
   return (
     <CommonLayout>
+      
       <Navigation book={book} />
       <BookDetails book={book} />
       <BookDescription book={book} />

@@ -46,11 +46,11 @@ const CartTableMd: React.FC<Props> = ({ addedBooks }) => {
               <td className="p-3">
                 {(addedBook.number! * addedBook.price).toLocaleString("fa-IR")}
               </td>
-              <td className="p-3 text-center">
+              {/* <td className="p-3 text-center">
                 <div className="bg-white dark:bg-slate-950 rounded w-fit p-1 shadow">
                   <TrashIcon className="w-5" />
                 </div>
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>

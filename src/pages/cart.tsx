@@ -17,17 +17,19 @@ const Cart: React.FC = () => {
         <title>طاقچه | سبد خرید</title>
       </Head>
       <CommonLayout>
-        <div className="container dark:bg-slate-800 mx-auto px-5 md:px-12 pt-10">
-          <Title title="سبد خرید" />
-          {cart.addedBooks.length === 0 ? (
-            <h1 className="text-center py-10">سبد خرید شما خالی است.</h1>
-          ) : (
-            <div className="flex flex-col md:flex-row">
-              <CartTableSm addedBooks={cart.addedBooks} />
-              <CartTableMd addedBooks={cart.addedBooks} />
-              <OrderDetails cart={cart} />
-            </div>
-          )}
+        <div className="dark:bg-slate-800">
+          <div className="container mx-auto px-5 md:px-12 pt-10">
+            <Title title="سبد خرید" />
+            {cart.addedBooks.length === 0 ? (
+              <h1 className="text-center py-10">سبد خرید شما خالی است.</h1>
+            ) : (
+              <div className="flex flex-col md:flex-row">
+                <CartTableSm addedBooks={cart.addedBooks} />
+                <CartTableMd addedBooks={cart.addedBooks} />
+                <OrderDetails cart={cart} />
+              </div>
+            )}
+          </div>
         </div>
       </CommonLayout>
     </>

@@ -6,7 +6,9 @@ const AuthLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
     <>
       <HeaderSm />
       <HeaderMd />
-      <div className="container mx-auto px-5 md:px-12 mt-10">{children}</div>
+      <div className="dark:bg-slate-800 h-[100vh] min-h-fit">
+        <div className="container mx-auto px-5 md:px-12 pt-10">{children}</div>
+      </div>
     </>
   );
 };

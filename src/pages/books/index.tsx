@@ -65,15 +65,17 @@ const Books: React.FC = () => {
         <title>طاقچه | کتاب‌ها</title>
       </Head>
       <CommonLayout>
-        <div className="container flex flex-col md:flex-row dark:bg-slate-800">
-          <SideBar />
-          <div className="grow">
-            <Sort />
-            {displayedBooks.length > 0 ? (
-              <BooksContainer books={displayedBooks} />
-            ) : (
-              <NoBookFound />
-            )}
+        <div className="dark:bg-slate-800">
+          <div className="container flex flex-col md:flex-row">
+            <SideBar />
+            <div className="grow">
+              <Sort />
+              {displayedBooks.length > 0 ? (
+                <BooksContainer books={displayedBooks} />
+              ) : (
+                <NoBookFound />
+              )}
+            </div>
           </div>
         </div>
       </CommonLayout>
