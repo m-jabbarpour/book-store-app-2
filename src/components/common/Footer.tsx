@@ -1,14 +1,8 @@
 import Image from "next/image";
 
-import logo from "../../../public/logos/logo.svg";
-import telegram from "../../../public/logos/telegram.svg";
-import instagram from "../../../public/logos/instagram.svg";
-import facebook from "../../../public/logos/facebook.svg";
-import twitter from "../../../public/logos/twitter.svg";
-import youtube from "../../../public/logos/youtube.svg";
-import linkedin from "../../../public/logos/linkedin.svg";
-import samandehi from "../../../public/logos/samandehi.png";
 import enamad from "../../../public/logos/enamad.webp";
+import logo from "../../../public/logos/logo.svg";
+import samandehi from "../../../public/logos/samandehi.png";
 
 const Footer: React.FC = () => (
   <footer className="bg-neutral-200 dark:bg-slate-700 dark:text-slate-300">
@@ -78,42 +72,42 @@ const Footer: React.FC = () => (
         </span>
         <div className="flex gap-2">
           <Image
-            src={facebook}
+            src="/logos/facebook.svg"
             width={32}
             height={32}
             alt="فیس‌بوک"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
-            src={twitter}
+            src="/logos/twitter.svg"
             width={32}
             height={32}
             alt="توئیتر"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
-            src={youtube}
+            src="/logos/youtube.svg"
             width={32}
             height={32}
             alt="یوتیوب"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
-            src={telegram}
+            src="/logos/telegram.svg"
             width={32}
             height={32}
             alt="تلگرام"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
-            src={instagram}
+            src="/logos/instagram.svg"
             width={32}
             height={32}
             alt="اینستاگرام"
             className="grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
           />
           <Image
-            src={linkedin}
+            src="/logos/linkedin.svg"
             width={32}
             height={32}
             alt="لینکدین"
