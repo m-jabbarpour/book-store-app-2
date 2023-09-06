@@ -14,7 +14,7 @@ const Cart: React.FC = () => {
   return (
     <>
       <Head>
-        <title>طاقچه | سبد خرید</title>
+        <title>پردیس کتاب | سبد خرید</title>
       </Head>
       <CommonLayout>
         <div className="dark:bg-slate-800">

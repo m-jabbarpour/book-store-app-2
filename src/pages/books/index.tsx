@@ -62,7 +62,7 @@ const Books: React.FC = () => {
   return (
     <>
       <Head>
-        <title>طاقچه | کتاب‌ها</title>
+        <title>پردیس کتاب | کتاب‌ها</title>
       </Head>
       <CommonLayout>
         <div className="dark:bg-slate-800">

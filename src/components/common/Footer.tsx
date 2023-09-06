@@ -11,9 +11,9 @@ const Footer: React.FC = () => (
         <div className="w-full xl:w-1/3 flex flex-col justify-around items-center gap-2 text-xs px-8 mx-auto">
           <Image src={logo} width={48} height={48} alt="فروشگاه کتاب" />
           <p className="text-center xl:text-justify ">
-            طاقچه سایت و اپلیکیشن دانلود کتاب الکترونیکی و دانلود کتاب صوتی است.
-            در طاقچه هزاران کتاب، مجله، روزنامه و کتاب گویا را می‌توانید دانلود
-            کنید و با موبایل، تبلت و رایانه آن‌ها را بخوانید. در طاقچه کتاب‌های
+            پردیس کتاب سایت و اپلیکیشن دانلود کتاب الکترونیکی و دانلود کتاب صوتی است.
+            در پردیس کتاب هزاران کتاب، مجله، روزنامه و کتاب گویا را می‌توانید دانلود
+            کنید و با موبایل، تبلت و رایانه آن‌ها را بخوانید. در پردیس کتاب کتاب‌های
             روانشناسی، رمان و داستان، کتاب‌های تاریخی، کتاب فلسفی و هزاران کتاب
             رایگان برای دانلود وجود دارد.
           </p>
@@ -24,7 +24,7 @@ const Footer: React.FC = () => (
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 text-center lg:text-right justify-between text-sm">
           <div>
-            <h3 className="font-bold leading-[3rem] ">طاقچه</h3>
+            <h3 className="font-bold leading-[3rem] ">پردیس کتاب</h3>
             <ul className="flex flex-col justify-around">
               <li className="my-2">درباره ما</li>
               <li className="my-2">تماس با ما</li>
@@ -54,7 +54,7 @@ const Footer: React.FC = () => (
             </ul>
           </div>
           <div>
-            <h3 className="font-bold leading-[3rem]">وبلاگ طاقچه</h3>
+            <h3 className="font-bold leading-[3rem]">وبلاگ پردیس کتاب</h3>
             <ul className="flex flex-col justify-around">
               <li className="my-2">رمان جدید</li>
               <li className="my-2">زندگی‌نامه و آثار سعدی</li>
@@ -67,7 +67,7 @@ const Footer: React.FC = () => (
       </div>
       <div className="flex flex-col sm:flex-row gap-4 justify-between items-center py-3">
         <span className="text-[10px] hidden sm:block">
-          © کلیه حقوق این سایت محفوظ و متعلق به فروشگاه کتاب الکترونیک طاقچه
+          © کلیه حقوق این سایت محفوظ و متعلق به فروشگاه کتاب الکترونیک پردیس کتاب
           است.
         </span>
         <div className="flex gap-2">
@@ -115,7 +115,7 @@ const Footer: React.FC = () => (
           />
         </div>
         <span className="sm:hidden text-[10px] text-center">
-          © کلیه حقوق این سایت محفوظ و متعلق به فروشگاه کتاب الکترونیک طاقچه
+          © کلیه حقوق این سایت محفوظ و متعلق به فروشگاه کتاب الکترونیک پردیس کتاب
           است.
         </span>
       </div>
