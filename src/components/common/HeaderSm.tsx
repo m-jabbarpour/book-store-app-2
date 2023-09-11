@@ -6,6 +6,7 @@ import { UserCircleIcon } from "@heroicons/react/20/solid";
 import CartIcon from "../custom/CartIcon";
 import MobileDrawer from "../custom/MobileDrawer";
 import SearchBarSm from "./SearchBarSm";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 import logo from "../../../public/logos/logo.svg";
 
@@ -21,9 +22,10 @@ const HeaderSm: React.FC = () => {
           <Image src={logo} width={48} height={48} alt="فروشگاه کتاب" />
         </Link>
         <div className="flex gap-x-4 items-center">
-          <span>مدیریت</span>
+          {/* <span>مدیریت</span> */}
           <UserCircleIcon className="w-6" />
           <CartIcon />
+          <ThemeToggleButton />
         </div>
       </div>
     </header>

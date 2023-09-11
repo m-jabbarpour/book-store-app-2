@@ -34,6 +34,10 @@ const HeaderMd: React.FC = () => (
         </Link>
         <CartIcon />
         <ThemeToggleButton />
+          {/* <Link href="/management/login">
+            <span className="hover:text-primary cursor-pointer">مدیریت</span>
+          </Link> */}
+          <ThemeToggleButton />
       </div>
     </div>
   </header>
