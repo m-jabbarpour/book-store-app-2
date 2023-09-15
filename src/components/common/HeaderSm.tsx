@@ -23,7 +23,7 @@ const HeaderSm: React.FC = () => {
         </Link>
         <div className="flex gap-x-4 items-center">
           {/* <span>مدیریت</span> */}
-          <UserCircleIcon className="w-6" />
+          {/* <UserCircleIcon className="w-6" /> */}
           <CartIcon />
           <ThemeToggleButton />
         </div>
