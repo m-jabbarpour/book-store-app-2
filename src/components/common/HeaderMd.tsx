@@ -6,7 +6,7 @@ import CartIcon from "../custom/CartIcon";
 import DropDownMenu from "../custom/DropDownMenu";
 import SearchBarLg from "./SearchBarLg";
 import ThemeToggleButton from "./ThemeToggleButton";
-import UserLogin from "./UserLogin";
+// import UserLogin from "./UserLogin";
 
 const HeaderMd: React.FC = () => {
   return (

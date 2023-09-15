@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { UserCircleIcon } from "@heroicons/react/20/solid";
-
 import CartIcon from "../custom/CartIcon";
 import MobileDrawer from "../custom/MobileDrawer";
 import SearchBarSm from "./SearchBarSm";
