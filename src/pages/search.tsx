@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 const Search: React.FC<Props> = ({ foundBooks }) => {
   return (
     <CommonLayout>
-      <div className="container mx-auto px-12">
+      <div className="container dark:bg-slate-800 mx-auto px-12">
         {foundBooks.length > 0 ? (
           <BooksContainer books={foundBooks} />
         ) : (

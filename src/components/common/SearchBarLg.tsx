@@ -13,7 +13,7 @@ const SearchBarLg: React.FC = () => {
     const term = searchInputRef?.current?.value;
 
     if (term) {
-      router.push("/search-results?term=" + term);
+      router.push("/search?term=" + term);
     }
   };
 
